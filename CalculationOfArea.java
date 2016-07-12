@@ -1,31 +1,39 @@
 package dz4_1;
 
+import java.util.Scanner;
+
 public class CalculationOfArea {
 
     public static void main(String[] args) {
-        System.out.println("Площадь треугольника равна " + TriangleArea());
-        System.out.println("Площадь круга равна " + RectangleArea());
-        System.out.println("Площадь прямоугольника равна " + CircleArea());
+        System.out.println("Для расчета площади треугольника введите 1 \n"+
+                "Для расчета площади прямоугольника введите 2 \n"+
+                "Для расчета площади круга введите 3 \n"+
+                "Для выхода 0\n");
+        Scanner scanner = new Scanner(System.in);
+         int scan=scanner.nextInt();
+
+        if (scan==1){
+            System.out.println("Введите ширину треугольника: ");
+            double a = scanner.nextDouble();
+            System.out.println("Введите высоту треугольника: ");
+            double b = scanner.nextDouble();
+            System.out.println("Площадь треугольника равна " + Triangle.TriangleArea(a,b));
+        }
+        if (scan==2){
+            System.out.println("Введите ширину прямоугольника: ");
+            double a = scanner.nextDouble();
+            System.out.println("Введите высоту прямоугольника: ");
+            double b = scanner.nextDouble();
+            System.out.println("Площадь прямоугольника равна " + Rectangle.RectangleArea(a,b));
+        }
+        if (scan==3){System.out.println("Введите радиус треугольника: ");
+            double a = scanner.nextDouble();
+            System.out.println("Площадь круга равна " + Circle.CircleArea(a));
+        }
+        if (scan==0){
+            System.exit(0);
+        }
+
     }
-
-
-
-    public static double TriangleArea () {
-        double a=5;
-        double b=3.4;
-        return ((a*b)/2);
 }
-
-    public static double  RectangleArea() {
-        double a=123;
-        double b=35.4;
-        return (a*b);
-    }
-    public static double CircleArea () {
-        double radius=5.7;
-
-        return Math.PI*radius*radius;
-    }
-}
-
 
